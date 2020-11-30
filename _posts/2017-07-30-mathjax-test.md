@@ -12,6 +12,8 @@ tags: HashMap
   JDK 1.8 对 HashMap 进行了比较大的优化，底层实现由之前的 “数组+链表” 改为 “数组+链表+红黑树”，本文就 HashMap 的几个常用的重要方法和 JDK 1.8 之前的死循环问题展开学习讨论。
 
   JDK 1.8 的 HashMap 的数据结构如下图所示，当链表节点较少时仍然是以链表存在，当链表节点较多时（大于8）会转为红黑树。
+  
+  
 **几个点**：
 
 先了解以下几个点，有利于更好的理解 HashMap 的源码和阅读本文。
@@ -60,7 +62,7 @@ static class Node<K,V> implements Map.Entry<K,V> {
     V value;
     Node<K,V> next;
  
-    // ... ...
+    
 }
  
 // 红黑树节点
@@ -71,7 +73,7 @@ static final class TreeNode<K,V> extends LinkedHashMap.Entry<K,V> {
     TreeNode<K,V> prev;    // needed to unlink next upon deletion
     boolean red;
    
-    // ...
+   
 }
 
 
