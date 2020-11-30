@@ -2,7 +2,7 @@
 layout: post
 title: 'HashMap解读'
 date: 2017-07-30
-categories: test
+categories: sham
 tags: HashMap 
 ---
 
